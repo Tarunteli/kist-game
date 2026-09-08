@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="किस्त गेम - Interactive Three.js 3D Payment Game"
+    >
+
+    <title>किस्त गेम</title>
+
+
+    <!-- =====================================================
+         HINDI FONT
+    ====================================================== -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         YOUR CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+
+    <!-- =====================================================
+         THREE.JS
+    ====================================================== -->
+
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.180.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.180.0/examples/jsm/"
+        }
+    }
+    </script>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         MAIN APP
+    ====================================================== -->
+
+    <div id="app-container">
+
+
+        <!-- =================================================
+             THREE.JS CANVAS
+        ================================================== -->
+
+        <div id="canvas-container"></div>
+
+
+
+        <!-- =================================================
+             UI PANEL
+        ================================================== -->
+
+        <div id="ui-panel">
+
+
+            <div
+                id="panel-card"
+                class="glass-card"
+            >
+
+
+                <!-- =========================================
+                     HEADER
+                ========================================== -->
+
+                <div class="card-heading">
+
+
+                    <div class="small-label">
+                        💰 भुगतान प्रक्रिया
+                    </div>
+
+
+                    <h1 id="title">
+                        किस्त गेम
+                    </h1>
+
+
+                    <p class="subtitle">
+                        नीचे दिए गए विकल्प में से एक विकल्प चुनें
+                    </p>
+
+
+                </div>
+
+
+
+                <!-- =========================================
+                     STEP 1
+                ========================================== -->
+
+                <div
+                    id="question"
+                    class="step-container active"
+                >
+
+
+                    <h2 class="main-question">
+                        आपने किस्त भरी या नहीं?
+                    </h2>
+
+
+                    <div class="button-group">
+
+
+                        <!-- YES -->
+
+                        <button
+                            id="yesBtn"
+                            class="btn btn-green"
+                            type="button"
+                        >
+
+                            <span class="btn-icon">
+                                ✓
+                            </span>
+
+                            <span>
+                                हाँ
+                            </span>
+
+                        </button>
+
+
+
+                        <!-- NO -->
+
+                        <button
+                            id="noBtn"
+                            class="btn btn-red"
+                            type="button"
+                        >
+
+                            <span class="btn-icon">
+                                ✕
+                            </span>
+
+                            <span>
+                                नहीं
+                            </span>
+
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =========================================
+                     STEP 2
+                ========================================== -->
+
+                <div
+                    id="paymentOptions"
+                    class="step-container"
+                >
+
+
+                    <h2 class="main-question">
+                        किस्त किस प्रकार भरना चाहेंगे?
+                    </h2>
+
+
+                    <p class="step-description">
+                        भुगतान करने का विकल्प चुनें
+                    </p>
+
+
+                    <div class="button-group">
+
+
+                        <!-- CASH -->
+
+                        <button
+                            id="cashBtn"
+                            class="btn btn-gray"
+                            type="button"
+                        >
+
+                            <span class="btn-icon">
+                                💵
+                            </span>
+
+                            <span>
+                                पैसे देकर
+                            </span>
+
+                        </button>
+
+
+
+                        <!-- G PAY -->
+
+                        <button
+                            id="gpayBtn"
+                            class="btn btn-gpay"
+                            type="button"
+                        >
+
+                            <span class="btn-icon">
+                                G
+                            </span>
+
+                            <span>
+                                G Pay
+                            </span>
+
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+              <div id="gameEnd" class="step-container">
+
+    <div class="success-icon">✓</div>
+
+    <h2 class="end-title">
+        गेम समाप्त
+    </h2>
+
+    <p id="resultText" class="status-message">
+        भुगतान प्रक्रिया पूरी हो गई।
+    </p>
+
+    <button
+        id="restartBtn"
+        class="btn btn-restart"
+        type="button">
+        🔄 दोबारा खेलें
+    </button>
+
+</div>
+                <!-- =========================================
+                     STATUS
+                ========================================== -->
+
+                <div
+                    id="statusBox"
+                    class="status-box"
+                >
+
+                    <span class="status-dot"></span>
+
+                    <span id="statusText">
+                        गेम शुरू करने के लिए विकल्प चुनें
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         MAIN THREE.JS SCRIPT
+    ====================================================== -->
+
+    <script
+        type="module"
+        src="script.js"
+    ></script>
+
+
+</body>
+
+</html>

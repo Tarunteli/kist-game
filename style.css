@@ -1,0 +1,1155 @@
+/* =========================================================
+   KIST GAME - COMPLETE CLEAN CSS
+   ========================================================= */
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+
+body {
+    overflow: hidden;
+
+    font-family:
+        "Noto Sans Devanagari",
+        "Mangal",
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background: #8bcde9;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   MAIN APP
+========================================================= */
+
+#app-container {
+    position: relative;
+
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   THREE.JS BACKGROUND
+========================================================= */
+
+#canvas-container {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 1;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            #75c4e8 0%,
+            #a8dcf0 52%,
+            #a9d879 52%,
+            #8ac756 100%
+        );
+}
+
+
+#canvas-container canvas {
+    display: block;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    outline: none;
+}
+
+
+/* =========================================================
+   UI PANEL
+========================================================= */
+
+#ui-panel {
+    position: absolute;
+
+    top: 50%;
+    left: 35px;
+
+    transform: translateY(-50%);
+
+    width: 430px;
+    max-width: calc(100vw - 70px);
+
+    z-index: 20;
+
+    pointer-events: none;
+}
+
+
+#panel-card {
+    pointer-events: auto;
+}
+
+
+/* =========================================================
+   GLASS CARD
+========================================================= */
+
+.glass-card {
+    width: 100%;
+
+    padding: 30px;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.32),
+            rgba(255,255,255,0.15)
+        );
+
+    border: 2px solid rgba(255,255,255,0.48);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,0.22),
+        inset 0 1px 0 rgba(255,255,255,0.65);
+
+    color: #ffffff;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.card-heading {
+    width: 100%;
+
+    margin-bottom: 25px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   SMALL PAYMENT LABEL
+========================================================= */
+
+.small-label {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    padding: 8px 17px;
+
+    margin-bottom: 8px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255,255,255,0.20);
+
+    border:
+        1px solid rgba(255,255,255,0.20);
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    text-shadow:
+        0 2px 4px rgba(0,0,0,0.18);
+}
+
+
+/* =========================================================
+   MAIN TITLE
+========================================================= */
+
+#title {
+    display: block;
+
+    width: 100%;
+
+    margin: 4px 0 8px;
+
+    color: #ffffff;
+
+    font-family:
+        "Noto Sans Devanagari",
+        "Mangal",
+        "Segoe UI",
+        sans-serif;
+
+    font-size: 43px;
+
+    font-weight: 900;
+
+    line-height: 1.25;
+
+    text-align: center;
+
+    letter-spacing: 0;
+
+    text-shadow:
+        0 4px 8px rgba(0,0,0,0.25);
+}
+
+
+/* =========================================================
+   SUBTITLE
+========================================================= */
+
+.subtitle {
+    display: block;
+
+    width: 100%;
+
+    margin: 0;
+
+    color: rgba(255,255,255,0.96);
+
+    font-size: 16px;
+
+    font-weight: 500;
+
+    line-height: 1.5;
+
+    text-align: center;
+
+    text-shadow:
+        0 2px 5px rgba(0,0,0,0.16);
+}
+
+
+/* =========================================================
+   STEP SYSTEM
+========================================================= */
+
+.step-container {
+    display: none;
+
+    width: 100%;
+
+    opacity: 0;
+
+    visibility: hidden;
+}
+
+
+.step-container.active {
+    display: block;
+
+    opacity: 1;
+
+    visibility: visible;
+
+    animation:
+        stepIn 0.35s ease forwards;
+}
+
+
+@keyframes stepIn {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(12px)
+            scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+/* =========================================================
+   STEP 1
+========================================================= */
+
+#question {
+    width: 100%;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   MAIN QUESTION
+========================================================= */
+
+.main-question {
+    display: block;
+
+    width: 100%;
+
+    margin: 0 0 24px;
+
+    color: #ffffff;
+
+    font-family:
+        "Noto Sans Devanagari",
+        "Mangal",
+        "Segoe UI",
+        sans-serif;
+
+    font-size: 27px;
+
+    font-weight: 800;
+
+    line-height: 1.5;
+
+    text-align: center;
+
+    text-shadow:
+        0 3px 7px rgba(0,0,0,0.22);
+}
+
+
+/* =========================================================
+   STEP DESCRIPTION
+========================================================= */
+
+.step-description {
+    display: block;
+
+    width: 100%;
+
+    margin:
+        -8px
+        0
+        22px;
+
+    color: rgba(255,255,255,0.92);
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   BUTTON GROUP
+========================================================= */
+
+.button-group {
+    display: flex;
+
+    flex-direction: row;
+
+    align-items: stretch;
+    justify-content: center;
+
+    width: 100%;
+
+    gap: 16px;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   ALL BUTTONS
+========================================================= */
+
+.btn {
+    position: relative;
+
+    display: flex;
+
+    flex: 1;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    width: 50%;
+
+    min-width: 0;
+
+    height: 70px;
+
+    padding: 12px 18px;
+
+    border: none;
+
+    border-radius: 19px;
+
+    color: #ffffff;
+
+    font-family:
+        "Noto Sans Devanagari",
+        "Mangal",
+        "Segoe UI",
+        sans-serif;
+
+    font-size: 19px;
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    outline: none;
+
+    user-select: none;
+
+    transition:
+        transform 0.18s ease,
+        filter 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+
+/* =========================================================
+   BUTTON HOVER
+========================================================= */
+
+.btn:hover {
+    transform: translateY(-4px);
+
+    filter: brightness(1.07);
+}
+
+
+/* =========================================================
+   BUTTON ACTIVE
+========================================================= */
+
+.btn:active {
+    transform: translateY(3px);
+}
+
+
+/* =========================================================
+   BUTTON ICON
+========================================================= */
+
+.btn-icon {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 32px;
+    height: 32px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.20);
+
+    color: #ffffff;
+
+    font-size: 20px;
+
+    font-weight: 900;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   YES BUTTON
+========================================================= */
+
+.btn-green {
+    background:
+        linear-gradient(
+            145deg,
+            #43e47f 0%,
+            #19b960 100%
+        );
+
+    box-shadow:
+        0 7px 0 #108d48,
+        0 13px 25px rgba(13,128,68,0.30);
+}
+
+
+.btn-green:hover {
+    box-shadow:
+        0 10px 0 #108d48,
+        0 18px 28px rgba(13,128,68,0.34);
+}
+
+
+/* =========================================================
+   NO BUTTON
+========================================================= */
+
+.btn-red {
+    background:
+        linear-gradient(
+            145deg,
+            #ff5c52 0%,
+            #db3029 100%
+        );
+
+    box-shadow:
+        0 7px 0 #a8221e,
+        0 13px 25px rgba(160,35,30,0.30);
+}
+
+
+.btn-red:hover {
+    box-shadow:
+        0 10px 0 #a8221e,
+        0 18px 28px rgba(160,35,30,0.34);
+}
+
+
+/* =========================================================
+   CASH BUTTON
+========================================================= */
+
+.btn-gray {
+    background:
+        linear-gradient(
+            145deg,
+            #71838e 0%,
+            #3e4e58 100%
+        );
+
+    box-shadow:
+        0 7px 0 #2d3940,
+        0 13px 25px rgba(0,0,0,0.22);
+}
+
+
+/* =========================================================
+   GPAY BUTTON
+========================================================= */
+
+.btn-gpay {
+    background:
+        linear-gradient(
+            145deg,
+            #4285f4 0%,
+            #1769d4 100%
+        );
+
+    box-shadow:
+        0 7px 0 #0e4fa7,
+        0 13px 25px rgba(22,91,180,0.30);
+}
+
+
+/* =========================================================
+   PAYMENT OPTIONS
+========================================================= */
+
+#paymentOptions {
+    width: 100%;
+
+    text-align: center;
+}
+
+
+#paymentOptions .main-question {
+    margin-bottom: 14px;
+}
+
+
+/* =========================================================
+   STATUS BOX
+========================================================= */
+
+.status-box {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    width: 100%;
+
+    margin-top: 22px;
+
+    padding: 13px 15px;
+
+    border-radius: 15px;
+
+    background:
+        rgba(0,0,0,0.09);
+
+    border:
+        1px solid rgba(255,255,255,0.13);
+
+    color: rgba(255,255,255,0.95);
+
+    font-size: 13px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   STATUS DOT
+========================================================= */
+
+.status-dot {
+    display: inline-block;
+
+    width: 10px;
+    height: 10px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #38e98a;
+
+    box-shadow:
+        0 0 12px rgba(56,233,138,0.85);
+}
+
+
+/* =========================================================
+   GAME END
+========================================================= */
+
+#gameEnd {
+    width: 100%;
+
+    text-align: center;
+}
+
+
+.success-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 15px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #42df82,
+            #19b75d
+        );
+
+    box-shadow:
+        0 8px 20px rgba(17,130,67,0.30);
+
+    color: #ffffff;
+
+    font-size: 36px;
+
+    font-weight: 900;
+}
+
+
+#gameEnd h2 {
+    margin-bottom: 10px;
+
+    color: #ffffff;
+
+    font-size: 28px;
+
+    font-weight: 900;
+
+    text-shadow:
+        0 3px 6px rgba(0,0,0,0.22);
+}
+
+
+#resultText {
+    margin-bottom: 18px;
+
+    color: rgba(255,255,255,0.95);
+
+    font-size: 15px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   RESTART BUTTON
+========================================================= */
+
+.btn-restart {
+    width: 100%;
+
+    margin-top: 5px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f6a623,
+            #d76b0b
+        );
+
+    box-shadow:
+        0 7px 0 #a94f08,
+        0 13px 25px rgba(150,76,10,0.30);
+}
+
+
+/* =========================================================
+   OLD / UNWANTED ELEMENTS
+   अगर पुराने HTML में रह गए हों तो hide होंगे
+========================================================= */
+
+.step-number {
+    display: none !important;
+}
+
+
+.help-text {
+    display: none !important;
+}
+
+
+.info-box {
+    display: none !important;
+}
+
+
+.game-footer {
+    display: none !important;
+}
+
+
+/* =========================================================
+   REMOVE OLD QUESTION STYLING
+========================================================= */
+
+.question {
+    width: 100%;
+
+    margin: 0;
+
+    padding: 0;
+
+    color: #ffffff;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (min-width: 1000px) {
+
+    #ui-panel {
+        width: 430px;
+    }
+
+
+    .glass-card {
+        padding:
+            32px
+            30px
+            28px;
+    }
+
+
+    #title {
+        font-size: 44px;
+    }
+
+
+    .main-question {
+        font-size: 28px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    #ui-panel {
+        left: 20px;
+
+        width: 390px;
+
+        max-width:
+            calc(100vw - 40px);
+    }
+
+
+    .glass-card {
+        padding: 27px 24px;
+    }
+
+
+    #title {
+        font-size: 38px;
+    }
+
+
+    .main-question {
+        font-size: 24px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    body {
+        overflow: hidden;
+    }
+
+
+    #ui-panel {
+
+        top: auto;
+
+        bottom: 15px;
+
+        left: 12px;
+
+        transform: none;
+
+        width:
+            calc(100vw - 24px);
+
+        max-width: none;
+    }
+
+
+    .glass-card {
+
+        padding:
+            22px
+            17px
+            19px;
+
+        border-radius: 23px;
+    }
+
+
+    .card-heading {
+        margin-bottom: 19px;
+    }
+
+
+    .small-label {
+        padding:
+            7px
+            14px;
+
+        font-size: 12px;
+    }
+
+
+    #title {
+        margin-top: 3px;
+
+        font-size: 32px;
+    }
+
+
+    .subtitle {
+        font-size: 13px;
+    }
+
+
+    .main-question {
+        margin-bottom: 19px;
+
+        font-size: 21px;
+
+        line-height: 1.5;
+    }
+
+
+    .button-group {
+        gap: 11px;
+    }
+
+
+    .btn {
+        height: 60px;
+
+        padding:
+            10px
+            12px;
+
+        border-radius: 16px;
+
+        font-size: 16px;
+    }
+
+
+    .btn-icon {
+        width: 28px;
+        height: 28px;
+
+        font-size: 17px;
+    }
+
+
+    .status-box {
+        margin-top: 16px;
+
+        padding: 11px;
+
+        font-size: 12px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+    #ui-panel {
+        left: 9px;
+
+        bottom: 9px;
+
+        width:
+            calc(100vw - 18px);
+    }
+
+
+    .glass-card {
+        padding:
+            19px
+            13px
+            16px;
+    }
+
+
+    .card-heading {
+        margin-bottom: 16px;
+    }
+
+
+    .small-label {
+        font-size: 11px;
+
+        padding:
+            6px
+            12px;
+    }
+
+
+    #title {
+        font-size: 29px;
+    }
+
+
+    .subtitle {
+        font-size: 12px;
+    }
+
+
+    .main-question {
+        font-size: 19px;
+
+        margin-bottom: 17px;
+    }
+
+
+    .button-group {
+        gap: 8px;
+    }
+
+
+    .btn {
+        height: 56px;
+
+        font-size: 15px;
+
+        border-radius: 14px;
+    }
+
+
+    .btn-icon {
+        width: 26px;
+        height: 26px;
+
+        font-size: 16px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL SCREEN
+========================================================= */
+
+@media (max-width: 350px) {
+
+    .glass-card {
+        padding: 16px 10px;
+    }
+
+
+    #title {
+        font-size: 26px;
+    }
+
+
+    .main-question {
+        font-size: 17px;
+    }
+
+
+    .btn {
+        height: 52px;
+
+        font-size: 14px;
+
+        gap: 5px;
+    }
+
+
+    .btn-icon {
+        width: 24px;
+        height: 24px;
+
+        font-size: 14px;
+    }
+
+}
+
+
+/* ================================
+   GAME STEPS
+================================ */
+
+.step-container {
+    display: none !important;
+    width: 100%;
+}
+
+.step-container.active {
+    display: block !important;
+}
+
+
+/* ================================
+   GAME END
+================================ */
+
+#gameEnd {
+    text-align: center;
+    width: 100%;
+}
+
+#gameEnd .success-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #22c55e;
+    color: white;
+
+    font-size: 42px;
+    font-weight: bold;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,.25);
+}
+
+#gameEnd .end-title {
+    color: white;
+    font-size: 32px;
+    margin: 10px 0;
+}
+
+#gameEnd .status-message {
+    color: white;
+    font-size: 18px;
+    margin: 15px 0;
+}
+
+#gameEnd .btn-restart {
+    width: 100%;
+    padding: 14px;
+    border: 0;
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #f59e0b,
+        #ea580c
+    );
+
+    color: white;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+}
